@@ -1,4 +1,5 @@
 import { View, StyleSheet, FlatList } from 'react-native';
+import { commonStyles } from '../styles/commonStyles';
 
 const data = new Array(12).fill(null).map((_, i) => ({ id: i.toString() }));
 
@@ -16,12 +17,7 @@ export default function GalleryScreen() {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        paddingTop: 10,
-        paddingHorizontal: 10,
-        backgroundColor: '#fff',
-    },
+    ...commonStyles,
     imageBox: {
         width: '45%',
         aspectRatio: 1.50,

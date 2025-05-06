@@ -1,4 +1,6 @@
-import { View, Text, StyleSheet, FlatList, Image } from 'react-native';
+import { View, Text, StyleSheet, FlatList } from 'react-native';
+import NewsCard from '../components/NewsCard';
+import { commonStyles } from '../styles/commonStyles';
 
 const data = new Array(12).fill(null).map((_, i) => ({
     id: i.toString(),
@@ -15,14 +17,7 @@ export default function HomeScreen() {
                 data={data}
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => (
-                    <View style={styles.newsItem}>
-                        <Image source={require('../assets/img/no-image.jpg')} style={styles.imagePlaceholder} />
-                        <View>
-                            <Text style={styles.newsTitle}>{item.title}</Text>
-                            <Text style={styles.newsDate}>{item.date}</Text>
-                            <Text style={styles.newsText}>{item.text}</Text>
-                        </View>
-                    </View>
+                    <NewsCard title={item.title} date={item.date} text={item.text} />
                 )}
             />
         </View>
@@ -30,38 +25,5 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        paddingTop: 10,
-        paddingHorizontal: 10,
-        backgroundColor: '#fff',
-    },
-    title: {
-        fontSize: 28,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        marginBottom: 18,
-    },
-    newsItem: {
-        flexDirection: 'row',
-        marginBottom: 10,
-    },
-    imagePlaceholder: {
-        resizeMode: 'cover',
-        width: 80,
-        height: 80,
-        marginRight: 12,
-    },
-    newsTitle: {
-        fontWeight: 500,
-        fontSize: 18,
-    },
-    newsDate: {
-        color: '#bbb',
-        fontSize: 14,
-    },
-    newsText: {
-        color: '#444',
-        fontSize: 16,
-    }
+    ...commonStyles,
 });
