@@ -83,8 +83,10 @@ const styles = StyleSheet.create({
   },
   footer: {
     backgroundColor: '#ebebeb',
+    justifyContent: 'center',
     alignItems: 'center',
     padding: 5,
+    height: 30,
   },
   footerCopy: {
     fontSize: 14,
