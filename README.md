@@ -4,15 +4,19 @@
 git clone https://github.com/vt231dmyu/MobileLabsRN2025
 cd MobileLabsRN2025
 ```
-2. Install dependencies
+2. Create and switch to a local branch `lab-2` based on the remote branch
+```bash 
+git checkout -b lab-2 origin/lab-2
+```
+3. Install dependencies
 ```bash
 npm install --legacy-peer-deps
 ```
-3. Start the project
+4. Start the project
 ```bash
 npx expo start
 ```
-4. Access the app (one of the options)
+5. Access the app (one of the options)
 - Scan the QR code with your Expo Go app on your phone.
 - Use an Android emulator/iOS simulator.
 ## Result
